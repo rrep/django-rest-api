@@ -6,3 +6,8 @@ from rest_framework import status
 def index(request):
     message = 'hello from the apiiiiiiiiiiiii'
     return Response(data=message, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def process_and_respond(request):
+    message = 'You sent me this crap? ' + request.data['text']
+    return Response(data=message, status=status.HTTP_200_OK)

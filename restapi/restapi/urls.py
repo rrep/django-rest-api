@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import index
+from .views import index, process_and_respond
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', index, name='index')
+    path('api/', index, name='index'),
+    #put request
+    path('test/', process_and_respond, name='respond')
 ]
